@@ -8,7 +8,11 @@ import lombok.Data;
 
 @Entity
 @Data
-public class TaskModel {
+public class Task {
+    //defines entity attributes which will make up the task
+    // the data type variable names will remain the same in the database
+
+    //@column annotation - look up?
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
