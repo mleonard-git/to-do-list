@@ -4,6 +4,7 @@ import com.qa.tdl.java.model.Task;
 import com.qa.tdl.java.service.TaskService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,12 @@ public class TaskController {
     @PostMapping(value = "/")
     public ResponseEntity<Task> createTask(@RequestBody Task task) {
         return ResponseEntity.ok(taskService.createNewTask(task));
+    }
+
+    @GetMapping(value = "/{id}")
+    public  ResponseEntity<Task> getTaskById(@RequestBody Long id){
+        return ResponseEntity.ok(taskService.getTaskById(id));
+
     }
 
 }
